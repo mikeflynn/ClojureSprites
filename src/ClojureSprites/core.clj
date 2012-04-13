@@ -1,14 +1,15 @@
 (ns ClojureSprites.core
+	(:gen-class)
 	(:require [clojure.java.io :as io]
 			  [clojure.string :as string]
 			  [clojure.pprint :as pp])
 	(:use [clojure.java.shell :only [sh]]))
 
 ; These will be command line arguments in the final build
-(def pathprefix "/were/the/css/file/lives/")
-(def css-infile (str pathprefix "/css/output.css"))
+(def pathprefix "/path/to/website/")
+(def css-infile (str pathprefix "/input/file.css"))
 (def css-outfile css-infile)
-(def spritefile "/images/output/sprite.png")
+(def spritefile "/output/sprite.png")
 (def tmp-img-dir "/tmp/clj_sprite_imgages")
 
 (defn maxoffset [images i]
@@ -81,11 +82,10 @@
 		(sh "rm" "-rf" tmp-img-dir)))
 		;(def foo true)))
 
-(defn -main [css-infile]
+(defn -main [& args]
 "Program start."
 	(def images (metadata (processfile css-infile process-img)))
 	(updatecss images spritefile css-infile css-outfile)
 	(prn "Your CSS file has been updated. Please wait while we build the sprite image.")
 	(create-sprite images (str pathprefix spritefile))
 	(prn "Done!"))
-
