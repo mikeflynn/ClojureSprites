@@ -1,13 +1,13 @@
 # ClojureSprites
 
-FIXME: write description
+A Clojure application to automatically create and implement a sprite from a CSS file.
 
 ## Usage
 
-FIXME: write
+./bin/clojuresprite --incss=/input/css/file.css --outsprite=/output/img/sprite.png [--outcss=/output/css/file.css] [--tempdir=/tmp/whatever]
 
 ## License
 
-Copyright (C) 2012 FIXME
+Copyright (C) 2012 Mike Flynn
 
 Distributed under the Eclipse Public License, the same as Clojure.
