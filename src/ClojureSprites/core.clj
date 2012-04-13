@@ -5,10 +5,10 @@
 	(:use [clojure.java.shell :only [sh]]))
 
 ; These will be command line arguments in the final build
-(def pathprefix "/var/www/html/announcemedia/answers.com/rubix.answers.com/htdocs/")
-(def css-infile (str pathprefix "/includes/css/main.css"))
+(def pathprefix "/were/the/css/file/lives/")
+(def css-infile (str pathprefix "/css/output.css"))
 (def css-outfile css-infile)
-(def spritefile "/includes/images/sprite.png")
+(def spritefile "/images/output/sprite.png")
 (def tmp-img-dir "/tmp/clj_sprite_imgages")
 
 (defn maxoffset [images i]
