@@ -2,6 +2,11 @@
 
 A Clojure application to automatically create and implement a sprite from a CSS file.
 
+## Requirements
+* JVM
+* Imagemagick (convert)
+** On Mac, using Homebrew: brew install imagemagick
+
 ## Usage
 
 ./bin/clojuresprite --incss=/input/css/file.css --outsprite=/output/img/sprite.png [--outcss=/output/css/file.css] [--tempdir=/tmp/whatever]
